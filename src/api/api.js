@@ -289,7 +289,7 @@ const animeContentHandler = async(id) =>{
   $('div#wrapper_bg').each((index , element) =>{
     const $element = $(element);
     const img = $element.find('div.anime_info_body_bg img').attr('src');
-    const synopsis = $element.find('div.anime_info_body_bg p.type').eq(1).text();
+    const synopsis = $element.find('div.description').text().replace(/\n/g, ' ').trim();
     const genres = [];
     $element.find('div.anime_info_body_bg p.type').eq(2).find('a').each((j , el) =>{
       const $el = $(el);
